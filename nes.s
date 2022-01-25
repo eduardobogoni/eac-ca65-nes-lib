@@ -10,3 +10,19 @@ INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
   .byte (INES_MAPPER & %11110000)
   .byte $0, $0, $0, $0, $0, $0, $0, $0 ; padding
 .endmacro
+
+.macro ram_clear
+  lda #0
+  ldx #0
+  :
+    sta $0000, X
+    sta $0100, X
+    sta $0200, X
+    sta $0300, X
+    sta $0400, X
+    sta $0500, X
+    sta $0600, X
+    sta $0700, X
+    inx
+    bne :-
+.endmacro
