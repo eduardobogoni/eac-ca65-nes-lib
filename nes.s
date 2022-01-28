@@ -32,6 +32,6 @@ INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
 
 .macro vblank_wait
   :
-		bit $2002
-		bpl :-
+    bit $2002
+    bpl :-
 .endmacro
