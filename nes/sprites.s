@@ -10,3 +10,14 @@ SPRITE_X_OFFSET = 3
 .define sprite_t(sprite_index) sprite_address(sprite_index, SPRITE_T_OFFSET)
 .define sprite_a(sprite_index) sprite_address(sprite_index, SPRITE_A_OFFSET)
 .define sprite_x(sprite_index) sprite_address(sprite_index, SPRITE_X_OFFSET)
+
+.macro sprite_byte_offset_to_x sprite_offset, attr_offset
+  .if attr_offset <> 0
+    lda sprite_offset
+    clc
+    adc #attr_offset
+    tax
+  .else
+    ldx sprite_offset
+  .endif
+.endmacro
