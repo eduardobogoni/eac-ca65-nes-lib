@@ -4,6 +4,13 @@
 
 oam: .res 256        ; sprite OAM data to be uploaded by DMA
 
+.macro oam_dma
+  ldx #0
+  stx OAMADDR
+  lda #>oam
+  sta OAMDMA
+.endmacro
+
 SPRITE_Y_OFFSET = 0
 SPRITE_T_OFFSET = 1
 SPRITE_A_OFFSET = 2
