@@ -1,5 +1,9 @@
 ; https://wiki.nesdev.org/w/index.php?title=PPU_OAM
 
+.segment "OAM"
+
+oam: .res 256        ; sprite OAM data to be uploaded by DMA
+
 SPRITE_Y_OFFSET = 0
 SPRITE_T_OFFSET = 1
 SPRITE_A_OFFSET = 2
