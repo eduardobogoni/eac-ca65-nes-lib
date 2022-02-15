@@ -1,4 +1,4 @@
-.include "nes/ppu.s"
+.include "nes/registers.s"
 .include "nes/sprites.s"
 
 INES_MAPPER = 0 ; 0 = NROM
