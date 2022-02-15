@@ -1,5 +1,6 @@
 .include "nes/registers.s"
 .include "nes/sprites.s"
+.include "nes/gamepad.s"
 
 INES_MAPPER = 0 ; 0 = NROM
 INES_MIRROR = 1 ; 0 = horizontal mirroring, 1 = vertical mirroring
