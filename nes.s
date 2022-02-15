@@ -15,6 +15,41 @@ INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
   .byte $0, $0, $0, $0, $0, $0, $0, $0 ; padding
 .endmacro
 
+.macro nes_reset
+  sei       ; mask interrupts
+  lda #0
+  sta PPUCTRL ; disable NMI
+  sta PPUMASK ; disable rendering
+  sta SND_CHN ; disable APU sound
+  sta DMC_FREQ ; disable DMC IRQ
+  lda #$40
+  sta JOY2 ; disable APU IRQ
+  cld       ; disable decimal mode
+  ldx #$FF
+  txs       ; initialize stack
+  ; wait for first vblank
+  bit PPUSTATUS
+  vblank_wait
+  ; clear all RAM to 0
+  ram_clear
+  ; place all sprites offscreen at Y=255
+  lda #255
+  ldx #0
+  :
+    sta oam, X
+    inx
+    inx
+    inx
+    inx
+    bne :-
+  ; wait for second vblank
+  vblank_wait
+  ; NES is initialized, ready to begin!
+  ; enable the NMI for graphical updates, and jump to our main program
+  lda #%10101000
+  sta PPUCTRL
+.endmacro
+
 .macro ram_clear
   lda #0
   ldx #0
