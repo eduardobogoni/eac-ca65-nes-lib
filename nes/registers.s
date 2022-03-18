@@ -1,4 +1,4 @@
-; PPU registers ( https://wiki.nesdev.org/w/index.php?title=PPU_registers )
+; PPU registers exposed to CPU ( https://wiki.nesdev.org/w/index.php?title=PPU_registers )
 PPUCTRL = $2000
 PPUMASK = $2001
 PPUSTATUS = $2002
@@ -8,7 +8,7 @@ PPUSCROLL = $2005
 PPUADDR = $2006
 PPUDATA = $2007
 
-; CPU registers ( https://wiki.nesdev.org/w/index.php?title=2A03 (
+; Audio and input registers exposed to CPU ( https://wiki.nesdev.org/w/index.php?title=2A03 (
 SQ1_VOL = $4000
 SQ1_SWEEP = $4001
 SQ1_LO = $4002
