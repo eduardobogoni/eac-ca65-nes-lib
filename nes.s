@@ -1,5 +1,6 @@
 .include "nes/registers.s"
 .include "nes/memory_map.s"
+.include "nes/ppu.s"
 .include "nes/sprites.s"
 .include "nes/gamepad.s"
 
