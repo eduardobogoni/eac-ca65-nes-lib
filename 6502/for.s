@@ -1,5 +1,9 @@
-.macro for_x_asc_start
-  ldx #0
+.macro for_x_asc_start start_count
+  .ifblank start_count
+    ldx #0
+  .else
+    ldx start_count
+  .endif
   :
 .endmacro
 
