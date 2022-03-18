@@ -4,7 +4,7 @@
 
 oam: .res 256        ; sprite OAM data to be uploaded by DMA
 
-.macro oam_dma
+.macro oam_dump
   ldx #0
   stx OAMADDR
   lda #>oam
