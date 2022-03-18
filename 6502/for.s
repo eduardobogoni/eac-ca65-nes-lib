@@ -18,7 +18,7 @@
   :
 .endmacro
 
-.macro for_x_desc_end count
+.macro for_x_desc_end
   dex
   bne :-
 .endmacro
