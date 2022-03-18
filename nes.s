@@ -2,6 +2,7 @@
 .include "nes/memory_map.s"
 .include "nes/ppu.s"
 .include "nes/nametables.s"
+.include "nes/palettes.s"
 .include "nes/sprites.s"
 .include "nes/gamepad.s"
 
