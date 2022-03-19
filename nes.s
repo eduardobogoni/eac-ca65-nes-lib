@@ -36,16 +36,7 @@ INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
   vblank_wait
   ; clear all RAM to 0
   ram_clear
-  ; place all sprites offscreen at Y=255
-  lda #255
-  ldx #0
-  :
-    sta oam, X
-    inx
-    inx
-    inx
-    inx
-    bne :-
+  sprites_clear
   ; wait for second vblank
   vblank_wait
   ; NES is initialized, ready to begin!

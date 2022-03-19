@@ -32,3 +32,16 @@ SPRITE_X_OFFSET = 3
     ldx sprite_offset
   .endif
 .endmacro
+
+; Place all sprites offscreen at Y=255.
+.macro sprites_clear
+  lda #255
+  ldx #0
+  :
+    sta oam, X
+    inx
+    inx
+    inx
+    inx
+    bne :-
+.endmacro
