@@ -32,7 +32,6 @@ INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
   ldx #$FF
   txs       ; initialize stack
   ; wait for first vblank
-  bit PPUSTATUS
   vblank_wait
   ; clear all RAM to 0
   ram_clear
