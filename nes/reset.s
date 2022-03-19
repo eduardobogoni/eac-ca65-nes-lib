@@ -38,3 +38,9 @@
     inx
     bne :-
 .endmacro
+
+.macro vblank_wait
+  :
+    bit PPUSTATUS
+    bpl :-
+.endmacro

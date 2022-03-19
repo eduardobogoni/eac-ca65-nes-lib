@@ -7,9 +7,3 @@
 .include "nes/gamepad.s"
 .include "nes/header.s"
 .include "nes/reset.s"
-
-.macro vblank_wait
-  :
-    bit PPUSTATUS
-    bpl :-
-.endmacro
