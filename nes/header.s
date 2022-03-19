@@ -1,4 +1,6 @@
 .macro nes_header
+  .segment "HEADER"
+
   .byte 'N', 'E', 'S', $1A ; ID
   .byte $02 ; 16k PRG chunk count
   .byte $01 ; 8k CHR chunk count
