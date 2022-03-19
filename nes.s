@@ -6,10 +6,6 @@
 .include "nes/sprites.s"
 .include "nes/gamepad.s"
 
-INES_MAPPER = 0 ; 0 = NROM
-INES_MIRROR = 1 ; 0 = horizontal mirroring, 1 = vertical mirroring
-INES_SRAM   = 0 ; 1 = battery backed SRAM at $6000-7FFF
-
 .macro nes_header
   .byte 'N', 'E', 'S', $1A ; ID
   .byte $02 ; 16k PRG chunk count
